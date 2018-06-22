@@ -1,0 +1,31 @@
+
+.flexbox-container {
+    background-color: #0737ea;
+    height: 100px;
+    width: 100%;
+    display: flex;
+    font-size: 24px;
+  }
+
+.flexbox-container li {
+    padding-right: 20px;
+    display: inline-flex;
+    vertical-align: middle;
+    float: right;
+  }
+
+.search {
+    margin-top: 40px;
+    margin-left: auto;
+    margin-right: auto;
+}
+  .search-input {
+      width: 500px;
+      height: 48px;
+      padding-left: 20px;
+      font-size: 24px; 
+  }
+
+  #search-button {
+      height: 48px;
+  }
