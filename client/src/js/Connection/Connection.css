@@ -1,0 +1,116 @@
+html, body {
+    height: 100%;
+}
+
+.flexbox-container {
+    background-color: #0737ea;
+    height: 100px;
+    width: 100%;
+    display: flex;
+    font-size: 24px;
+  }
+
+.menu-item {
+    padding-right: 60px;
+    display: inline-flex;
+    float: left;
+    margin-top: 40px;
+  }
+
+.menu-item a {
+    color: white;
+}
+
+.menu-item a:hover {
+    color: gray;
+}
+
+#log-out {
+    float: right;
+    margin: 0 auto;
+    margin-top: 40px;
+    padding-left: 500px;
+}
+
+.search {
+    margin-top: 40px;
+    
+}
+
+.search-input {
+    width: 700px;
+    height: 48px;
+    padding-left: 20px;
+    font-size: 24px;  
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+  }
+
+#search-button {
+    height: 48px;
+    margin-left: 5px;
+    width: 100px;
+    float: left;
+}
+
+.search-area {
+    width: 80%;
+    margin: 0 auto;
+}
+
+#filter-area {
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+#filter-area h4 {
+    font-weight: bold;
+}
+
+.columns {
+    margin-top: 20px;
+}
+
+.is-one-quarter {
+    margin: 5px;
+}
+
+.main-area {
+    background-color: white;
+    width: 80%;
+    margin: 0 auto;
+    height: 100%;
+    
+}
+
+/* search results area */
+#results-list {
+   margin: auto;
+   padding: 20px 0 20px 0;
+   overflow: auto;
+}
+
+#results-item {
+    width: 60%;
+    margin: 10px auto;
+    border-radius: 5px;
+    color: black;
+    
+    display: flex;
+    flex-direction: row;
+    /* align-items needed to center avatar */
+    align-items: center; 
+    /* justify-content: center; */
+}
+
+/* Does footer need to be included in each page to keep it at bottom? */
+.footer {
+    position: static;   /* this keeps footer at bottom of page and doesn't overlap content */
+    bottom: 0;
+    width: 100%;
+    height: 100px;
+    padding-top: 40px;
+    /* vertical-align: middle; */
+}
