@@ -2,8 +2,14 @@
 
 import React from "react";
 import "./Header.css";
+import { UserConsumer } from '../../Providers/UserProvider'
+import FormBuilder from '../UI/FormBuilder'
 
 console.log("connected to header.js");
+const fields = [
+	{ label: 'Username', name: 'username', type: 'text' },
+	{ label: 'Password', name: 'password', type: 'password' },
+]; 
 
 const Header = () => {
   return (
@@ -14,11 +20,19 @@ const Header = () => {
       <h1 id="site-title">Founder Connect</h1>
       <div id="log-in">
         <h2>Already a member?</h2>
-        <input id="username" type="text" placeholder="Enter username" />
-        <input id="password" type="text" placeholder="Enter password" />
-        <h2>
-          <button className="button is-outlined is-large">Log In</button>
-        </h2>
+        <UserConsumer>
+            {context => (
+              <FormBuilder
+                fields={fields}
+                handleChange={context.handleChange}
+                handleSubmit={context.handleLogin}
+                currentState={context.state}
+                errors={context.state.errors}
+                error={context.state.error}
+                buttonText="Log In"
+              />
+            )}
+          </UserConsumer>
       </div>
     </div>
   );
