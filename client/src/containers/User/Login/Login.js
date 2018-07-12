@@ -5,7 +5,7 @@ import FormBuilder from '../../../components/UI/FormBuilder';
 const fields = [
 	{ label: 'Username', name: 'username', type: 'text' },
 	{ label: 'Password', name: 'password', type: 'password' },
-];
+]; 
 
   class Login extends Component {
     render() {
