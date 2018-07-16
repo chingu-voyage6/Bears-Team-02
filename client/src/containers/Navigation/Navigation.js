@@ -21,7 +21,7 @@ class Navigation extends Component {
 
   render() {
     return (
-      <nav className="navbar is-info">
+      <nav className="navbar is-info is-spaced">
         <div className="navbar-brand">
           <Link to="/" className="navbar-item">
             FC
