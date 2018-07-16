@@ -1,47 +1,53 @@
-import React, { Component } from 'react';
-import Links from '../../components/UI/Links';
-import './Navigation.css';
-import { connect } from 'react-redux';
+import React, { Component } from "react";
+import Links from "../../components/UI/Links";
+import "./Navigation.css";
+import { connect } from "react-redux";
+import { Link } from "react-router-dom";
 
 const linksIn = [
-	{ name: 'LOGO', url: '/', class: 'Logo' },
-	{ name: 'Log Out', url: '/logout', class: 'Item' },
-	{ name: 'User', url: '/user', class: 'Item' },
-	{ name: 'Connections', url: '/connect', class: 'Item' },
+  { name: "Connections", url: "/connect", class: "navbar-item" },
+  { name: "User", url: "/user", class: "navbar-item" },
+  { name: "Log Out", url: "/logout", class: "navbar-item" }
 ];
 const linksOut = [
-	{ name: 'LOGO', url: '/', class: 'Logo' },
-	{ name: 'Sign Up', url: '/signup', class: 'Item' },
-	{ name: 'Log In', url: '/login', class: 'Item' },
+  { name: "Sign Up", url: "/signup", class: "navbar-item" },
+  { name: "Log In", url: "/login", class: "navbar-item" }
 ];
 
 class Navigation extends Component {
-	componentDidMount() {
-		console.log('CWM', this.props);
-	}
+  componentDidMount() {
+    console.log("CWD", this.props);
+  }
 
-	render() {
-		return (
-			<nav className="Nav">
-				{/* <UserConsumer>
-          {(context) =>
-            context.isLoggedIn ? <Links links={linksIn} user={context.state.currentUser} /> : <Links links={linksOut} />
-          }
-        </UserConsumer> */}
-				{this.props.authenticated ? <Links links={linksIn} /> : <Links links={linksOut} />}
-				{/* <Links links={linksOut} /> */}
-			</nav>
-		);
-	}
+  render() {
+    return (
+      <nav className="navbar is-info">
+        <div className="navbar-brand">
+          <Link to="/" className="navbar-item">
+            FC
+          </Link>
+        </div>
+        <div className="navbar-menu">
+          <div className="navbar-end">
+            {this.props.authenticated ? (
+              <Links links={linksIn} />
+            ) : (
+              <Links links={linksOut} />
+            )}
+          </div>
+        </div>
+      </nav>
+    );
+  }
 }
 
 const mapStateToProps = state => {
-	return { authenticated: state.User.authenticated };
+  return { authenticated: state.User.authenticated };
 };
 
 export default connect(
-	mapStateToProps,
-	null,
-	null,
-	{ pure: true }
+  mapStateToProps,
+  null,
+  null,
+  { pure: true }
 )(Navigation);
