@@ -1,22 +1,21 @@
-import React, { Component } from "react";
+import React, { Component , Fragment} from "react";
 import "./App.css";
 import Connections from "./components/Connections/Connections";
 import Landing from "./components/Landing/Landing";
 import Footer from "./components/Footer/Footer";
 import { Route, Switch } from "react-router-dom";
 import Navigation from "./containers/Navigation/Navigation";
-import SignUp from "./containers/SignUp/SignUp";
+import SignUp from "./containers/User/SignUp/SignUp";
 
-import { UserProvider } from "./Providers/UserProvider";
 import Logout from "./containers/User/Logout/Logout";
 import Login from "./containers/User/Login/Login";
-import Dashboard from "./components/UI/Dashboard";
+import Dashboard from "./containers/User/Dashboard/Dashboard";
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <UserProvider>
+        <Fragment>
           <Navigation />
           <div className="content-layout-wrapper">
             <Switch>
@@ -30,7 +29,7 @@ class App extends Component {
           </div>
 
           <Footer />
-        </UserProvider>
+        </Fragment>
       </div>
     );
   }

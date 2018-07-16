@@ -1,7 +1,7 @@
-import React from "react";
+import React, { Component } from "react";
 import Links from "../../components/UI/Links";
 import "./Navigation.css";
-import { UserConsumer } from "../../Providers/UserProvider";
+import { connect } from 'react-redux'
 
 const linksIn = [
   { name: "LOGO", url: "/", class: "Logo" },
@@ -14,16 +14,30 @@ const linksOut = [
   { name: "Log In", url: "/login", class: "Item" }
 ];
 
-const Navigation = () => {
-  return (
-    <nav className="Nav">
-      <UserConsumer>
-        {(context) =>
-          context.isLoggedIn ? <Links links={linksIn} user={context.state.currentUser} /> : <Links links={linksOut} />
+class Navigation extends Component {
+  componentDidMount() {
+    console.log('CWM', this.props)
+  }
+
+  render() {
+    return (
+      <nav className="Nav">
+        {/* <UserConsumer>
+          {(context) =>
+            context.isLoggedIn ? <Links links={linksIn} user={context.state.currentUser} /> : <Links links={linksOut} />
+          }
+        </UserConsumer> */}
+        {
+          this.props.authenticated ? <Links links={linksIn} /> : <Links links={linksOut} />
         }
-      </UserConsumer>
-    </nav>
-  );
+        {/* <Links links={linksOut} /> */}
+      </nav>
+    );
+  }
 };
 
-export default Navigation;
+const mapStateToProps = (state) => {
+  return { authenticated: state.User.authenticated }
+}
+
+export default connect(mapStateToProps, null, null, {pure:true})(Navigation);

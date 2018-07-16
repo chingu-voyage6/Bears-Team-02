@@ -1,9 +1,11 @@
 import React, { Component } from 'react'
-import contextWrapper from '../../../hoc/contextWrapper';
+import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
+import * as userActions from '../../../actions/UserActions'
 
   class Logout extends Component {
     componentWillMount() {
-      this.props.context.handleLogout()
+      this.props.actions.logout()
     }
     render() {
       return(
@@ -12,4 +14,10 @@ import contextWrapper from '../../../hoc/contextWrapper';
     }
   }
 
-export default contextWrapper(Logout)
+  const mapDispatchToProps = (dispatch) => {
+    return {
+      actions: bindActionCreators(Object.assign(userActions), dispatch)
+    }
+  }
+
+export default connect(null, mapDispatchToProps)(Logout)

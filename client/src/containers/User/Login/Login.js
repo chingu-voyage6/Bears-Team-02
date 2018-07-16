@@ -1,34 +1,39 @@
 import React, { Component } from 'react'
-import { UserConsumer } from '../../../Providers/UserProvider'
-import FormBuilder from '../../../components/UI/FormBuilder';
+import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
+import * as userActions from '../../../actions/UserActions'
 
-const fields = [
-	{ label: 'Username', name: 'username', type: 'text' },
-	{ label: 'Password', name: 'password', type: 'password' },
+import FormBuilder from '../../../components/UI/User/FormBuilder';
+
+const Fields = [
+	{ label: 'Username', name: 'username', type: 'text', errorMsg: 'Username is required' },
+	{ label: 'Password', name: 'password', type: 'password', errorMsg: 'Password is required' },
 ];
 
   class Login extends Component {
+    onSubmit = values => {
+      this.props.actions.login(values)
+    }
+
     render() {
       return (
         <div>
-          <h1>Log In</h1>
+          <FormBuilder fields={Fields} onSubmit={this.onSubmit} buttonText='Log In' formTitle='Log In' />
 
-          <UserConsumer>
-            {context => (
-              <FormBuilder
-                fields={fields}
-                handleChange={context.handleChange}
-                handleSubmit={context.handleLogin}
-                currentState={context.state}
-                errors={context.state.errors}
-                error={context.state.error}
-                buttonText="Log In"
-              />
-            )}
-          </UserConsumer>
+          <p style={{ color: 'red' }}>{this.props.error}</p>
         </div>
       )
     }
   }
 
-export default Login
+  const mapStateToProps = (state) => {
+    return { error: state.User.error }
+  }
+
+  const mapDispatchToProps = (dispatch) => {
+    return {
+      actions: bindActionCreators(Object.assign(userActions), dispatch)
+    }
+  }
+
+export default connect(mapStateToProps, mapDispatchToProps)(Login)
