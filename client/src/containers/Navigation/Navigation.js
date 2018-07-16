@@ -21,7 +21,11 @@ class Navigation extends Component {
 
   render() {
     return (
+<<<<<<< HEAD
       <nav className="navbar is-info">
+=======
+      <nav className="navbar is-primary">
+>>>>>>> 9582ff61055b0abadeaa06bac044c321b61c6d9b
         <div className="navbar-brand">
           <Link to="/" className="navbar-item">
             FC
