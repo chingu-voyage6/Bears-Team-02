@@ -41,7 +41,7 @@ const FormBuilder = props => {
 
 	return (
 		<Form className='Form' onSubmit={handleSubmit}>
-      <h1>{props.formTitle}</h1>
+      <h1 className="title" >{props.formTitle}</h1>
 			{fields}
 			<button className='button is-success' type="submit">{props.buttonText}</button>
 			<button className='button is-danger'>Clear</button>
