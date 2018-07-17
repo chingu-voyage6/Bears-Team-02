@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 const { Schema } = mongoose;
+const connectRequest = require("./connectionRequest");
 const passportLocalMongoose = require("passport-local-mongoose");
 
 const userSchema = new Schema({
@@ -21,6 +22,7 @@ const userSchema = new Schema({
     countryCode: { type: String, required: false }
   },
   isTechnical: { type: Boolean, required: true, default: false },
+  pendingConnectionRequests: [connectRequest],
   connections: [{ type: mongoose.Schema.Types.ObjectId, ref: "User" }]
 });
 
@@ -50,5 +52,4 @@ module.exports = User;
     * (via the module.exports = User statement)
     * throughout our Express server/ router where we can search/query the collection, create new
     * user models (create new Users), and manipulate the db as we need.
- 
  */
