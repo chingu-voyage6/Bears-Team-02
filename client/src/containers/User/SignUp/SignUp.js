@@ -24,7 +24,7 @@ class SignUp extends Component {
 }
 
 const mapStateToProps = (state) => {
-	console.log(state.User.error)
+	// console.log(state.User.error)
 	return { error: state.User.error }
 }
 
