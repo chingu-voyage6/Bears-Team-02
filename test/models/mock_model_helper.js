@@ -4,7 +4,7 @@ function testModel() {
   const joe = new User({
     firstName: "Joe",
     lastName: "Smith",
-    userName: "jsmith",
+    username: "jsmith",
     email: "jsmith@smith.com",
     location: {
       city: "SF",

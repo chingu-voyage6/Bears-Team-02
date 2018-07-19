@@ -1,3 +1,4 @@
 module.exports = {
-  mLabURI: process.env.mLab_URI
+  mLabURI: process.env.mLabURI,
+  cookieKey: process.env.cookieKey
 };

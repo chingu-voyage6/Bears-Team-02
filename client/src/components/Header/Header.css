@@ -1,0 +1,9 @@
+/* Bulma Override */
+
+.hero.is-info {
+  background-image: #0737ea;
+}
+
+.hero.is-info .title {
+  font-size: 4rem;
+}

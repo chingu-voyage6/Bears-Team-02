@@ -3,7 +3,12 @@ const router = express.Router();
 const User = require("../models/User");
 const chalk = require("chalk");
 
-// TODO: This get route should be handled by authentication/ Passport
+/* 
+  * This routing should be used for the User Profile page, to 
+  * retrieve and update user info
+*/
+
+/* Retrieve LoggedIn User info */
 router.get("/", (req, res) => {
   const { id } = req.user;
   User.findById({ _id: id }, (err, user) => {
@@ -15,7 +20,9 @@ router.get("/", (req, res) => {
   });
 });
 
-// * Creating New Users if we don't use oAuth
+/* 
+  ? May not need this route if we use PUT routing instead ?
+*/
 router.post("/", (req, res) => {
   // * Other fields from User Schema will be updated from put route below
   const { firstName, lastName, userName, email, isTechnical } = req.body;

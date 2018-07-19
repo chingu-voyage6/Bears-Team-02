@@ -20,4 +20,11 @@ beforeEach(done => {
   mongoose.connection.collections.users.drop(() => {
     done();
   });
+
+  /* drop collection after last test to prevent error on new test startup */
+  after(done => {
+    mongoose.connection.collections.users.drop(() => {
+      done();
+    });
+  });
 });
