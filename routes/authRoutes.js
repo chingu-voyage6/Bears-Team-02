@@ -137,4 +137,27 @@ router.post('/addconnection', requireAuth, (req, res) => {
 	})
 })
 
+router.post('/acceptconnection', requireAuth, (req, res) => {
+	const acceptingUser = req.user._id.toString() // The logged in user
+	const requestingUser = req.body.requestingUser.toString() // The user who sent the request
+
+	User.findById(acceptingUser, (err, user) => {
+		if(user) {
+			user.connections.push(requestingUser)
+			user.save()
+		}	else {
+				console.log('NOUSER')
+		}
+	})
+	User.findById(requestingUser, (err, user) => {
+		if(user) {
+			user.connections.push(acceptingUser)
+			user.save()
+		}	else {
+				console.log('NOUSER')
+		}
+	})
+	res.json({success:true})
+})
+
 module.exports = router;
