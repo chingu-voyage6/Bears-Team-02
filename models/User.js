@@ -22,7 +22,7 @@ const userSchema = new Schema({
     countryCode: { type: String, required: false }
   },
   isTechnical: { type: Boolean, required: true, default: false },
-  pendingConnectionRequests: [connectRequest],
+  pendingConnectionRequests: { type: mongoose.Schema.Types.ObjectId, ref: "ConnecectionRequest" },
   connections: [{ type: mongoose.Schema.Types.ObjectId, ref: "User" }]
 });
 

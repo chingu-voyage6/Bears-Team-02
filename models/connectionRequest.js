@@ -1,11 +1,14 @@
 const mongoose = require("mongoose");
 const { Schema } = mongoose;
 
-const connectRequestSchema = new Schema({
-  requestingUser: { type: Schema.Types.ObjectId, ref: "User" }, // User that is making the connection request
-  requestedUser: { type: Schema.Types.ObjectId, ref: "User" }, // User that is being requested to connect
-  pending: { type: Boolean, default: true }
+const ConnectionRequestSchema = new Schema({
+  requestingUser: { type: Schema.Types.ObjectId, ref: "User", index: true }, // User that is making the connection request
+  requestedUser: { type: Schema.Types.ObjectId, ref: "User", index: true }, // User that is being requested to connect
+  pending: { type: String, default: 'Pending' } // Pending, Accepted, Rejected
 });
 
-module.exports = connectRequestSchema;
+const ConnectionRequest = mongoose.model('ConnectionRequest', ConnectionRequestSchema)
  
+module.exports.create = (newConnectionRequest, callback) => {
+  newConnectionRequest.save(callback)
+}
