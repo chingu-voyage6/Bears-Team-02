@@ -6,21 +6,21 @@ const Dashbaord = ({ user, toggleTechnical, toggleEditProfile, connections, togg
 	return (
     <React.Fragment>
 
-      <div class="section profile-heading">
-        <div class="columns is-mobile is-multiline">
-          <div class="column is-2">
-            <span class="header-icon user-profile-image">
+      <div className="section profile-heading">
+        <div className="columns is-mobile is-multiline">
+          <div className="column is-2">
+            <span className="header-icon user-profile-image">
               <img alt="" src="http://placehold.it/300x225" />
             </span>
           </div>
-          <div class="column is-4-tablet is-10-mobile name">
+          <div className="column is-4-tablet is-10-mobile name">
             <p>
-              <span class="title is-bold">
+              <span className="title is-bold">
                 {user.firstName} {user.lastName}
               </span>
               <br />
               <a
-                class="button is-primary is-outlined"
+                className="button is-primary is-outlined"
                 style={{ margin: '5px 0' }}
                 onClick={toggleEditProfile}
               >
@@ -35,55 +35,55 @@ const Dashbaord = ({ user, toggleTechnical, toggleEditProfile, connections, togg
               </a>
               <br />
             </p>
-            <p class="tagline">
+            <p className="tagline">
               The users profile bio would go here, of course. It could be two lines or more or whatever. We
               should probably limit the amount of characters to ~500 at most though.
             </p>
           </div>
-          <div class="column is-2-tablet is-4-mobile has-text-centered">
-            <p class="stat-val">{connections.length}</p>
-            <p class="stat-key">Connections</p>
+          <div className="column is-2-tablet is-4-mobile has-text-centered">
+            <p className="stat-val">{connections.length}</p>
+            <p className="stat-key">Connections</p>
           </div>
-          <div class="column is-2-tablet is-4-mobile has-text-centered">
-            <p class="stat-val">{user.pendingConnectionRequests.length}</p>
-            <p class="stat-key">Pending Connections</p>
+          <div className="column is-2-tablet is-4-mobile has-text-centered">
+            <p className="stat-val">{user.pendingConnectionRequests.length}</p>
+            <p className="stat-key">Pending Connections</p>
           </div>
-          <div class="column is-2-tablet is-4-mobile has-text-centered">
-            <p class="stat-val">0</p>
-            <p class="stat-key">Messages</p>
+          <div className="column is-2-tablet is-4-mobile has-text-centered">
+            <p className="stat-val">0</p>
+            <p className="stat-key">Messages</p>
           </div>
         </div>
-        <div class="profile-options is-fullwidth">
-          <div class="tabs is-fullwidth is-medium">
+        <div className="profile-options is-fullwidth">
+          <div className="tabs is-fullwidth is-medium">
             <ul>
-              <li class="link">
+              <li className="link">
                 <a>
-                  <span class="icon">
-                    <i class="fa fa-list" />
+                  <span className="icon">
+                    <i className="fa fa-list" />
                   </span>
                   <span onClick={() => toggleSection('Connections')}>Connections</span>
                 </a>
               </li>
-              <li class="link is-active">
+              <li className="link is-active">
                 <a>
-                  <span class="icon">
-                    <i class="fa fa-thumbs-up" />
+                  <span className="icon">
+                    <i className="fa fa-thumbs-up" />
                   </span>
                   <span onClick={() => toggleSection('Messages')}>Messages</span>
                 </a>
               </li>
-              <li class="link">
+              <li className="link">
                 <a>
-                  <span class="icon">
-                    <i class="fa fa-search" />
+                  <span className="icon">
+                    <i className="fa fa-search" />
                   </span>
                   <span onClick={() => toggleSection('Profile')}>Profile</span>
                 </a>
               </li>
-              <li class="link">
+              <li className="link">
                 <a>
-                  <span class="icon">
-                    <i class="fa fa-balance-scale" />
+                  <span className="icon">
+                    <i className="fa fa-balance-scale" />
                   </span>
                   <span onClick={() => toggleSection('Pending')}>Pending</span>
                 </a>
@@ -91,7 +91,7 @@ const Dashbaord = ({ user, toggleTechnical, toggleEditProfile, connections, togg
             </ul>
           </div>
         </div>
-        <div class="box" style={{ borderRadius: '0px' }} />
+        <div className="box" style={{ borderRadius: '0px' }} />
       </div>
 
       <div>
