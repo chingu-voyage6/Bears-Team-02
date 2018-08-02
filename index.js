@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
@@ -8,16 +7,6 @@ const passport = require('passport');
 // const cookieSession = require('cookie-session');
 const cors = require('cors');
 const morgan = require('morgan');
-=======
-const express = require("express");
-const bodyParser = require("body-parser");
-const mongoose = require("mongoose");
-const chalk = require("chalk");
-const keys = require("./config/keys");
-const passport = require("passport");
-const cors = require("cors");
-const morgan = require("morgan");
->>>>>>> a2c0e45c2dff644cb593d57ceef97a268eee377a
 
 const indexRoutes = require("./routes/index");
 const founderRoutes = require("./routes/founderRoute");
@@ -41,7 +30,6 @@ app.use(cors()); // Used for testing. Client is on another port to server.
 app.use(morgan("tiny")); // Used for testing. Logs requests to the console.
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-<<<<<<< HEAD
 // Commenting out for now to test JWT only
 /* app.use(
 	cookieSession({
@@ -49,8 +37,6 @@ app.use(bodyParser.urlencoded({ extended: true }));
 		keys: [keys.cookieKey],
 	})
 ); */
-=======
->>>>>>> a2c0e45c2dff644cb593d57ceef97a268eee377a
 
 // == Passport == //
 require("./services/passport");

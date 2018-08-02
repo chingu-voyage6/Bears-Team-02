@@ -8,6 +8,10 @@ Future Features
 - Notifications
 - Message a Connection
 - Delete User Profile
+- Add oAuth - Github/ Google
+
+Sign up/ Login Form
+ - Sanitize username to Remove case sensitivity
 
 Styling
   - Restyle Landing Title and Navbar

@@ -4,14 +4,16 @@ const User = require("../models/User");
 const passport = require("passport");
 
 const requireAuth = passport.authenticate("jwt", { session: false });
-
+/* 
+  * Route prefix: /founders 
+*/
 
 // == Main Handler for /connect list render == //
 router.get("/", requireAuth, (req, res) => {
   const loggedInUserID = req.user._id;
   const loggedInUserConnections = req.user.connections;
 
-  const { isTechnical } = req.query; // Note: returns String, not Boolean
+  const { isTechnical } = req.query; // Note: returns a String, not a Boolean
   /*  
     .find() params: Filters current loggedInUser and current connections
     with ($nin: "not in" - matches none of values in array ) 
