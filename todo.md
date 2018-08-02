@@ -15,6 +15,7 @@ Sign up/ Login Form
 
 Styling
   - Restyle Landing Title and Navbar
+  - Icons? - Do we need a package for icons to render?
   
 Revisit 
 - Refactor Connect/Dashboard re-render after getPendingRequest update
