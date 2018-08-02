@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 const chalk = require('chalk');
 const keys = require('./config/keys');
 const passport = require('passport');
-const cookieSession = require('cookie-session');
+// const cookieSession = require('cookie-session');
 const cors = require('cors');
 const morgan = require('morgan');
 
@@ -30,12 +30,13 @@ app.use(cors()); // Used for testing. Client is on another port to server.
 app.use(morgan('tiny')); // Used for testing. Logs requests to the console.
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(
+// Commenting out for now to test JWT only
+/* app.use(
 	cookieSession({
 		maxAge: 30 * 24 * 60 * 60 * 1000, // 30 days
 		keys: [keys.cookieKey],
 	})
-);
+); */
 
 // == Passport == //
 require('./services/passport');
