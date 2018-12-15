@@ -27,13 +27,11 @@
   "homepage": "https://github.com/chingu-voyage6/Bears-Team-02#readme",
   "dependencies": {
     "body-parser": "^1.18.3",
-    "bulma": "^0.7.1",
-    "bulma-badge": "^2.0.0",
     "chalk": "^2.4.1",
     "cookie-session": "^2.0.0-beta.3",
-    "express": "^4.16.3",
-    "jwt-simple": "^0.5.1",
-    "mongoose": "^5.2.6",
+    "express": "^4.16.4",
+    "jwt-simple": "^0.5.5",
+    "mongoose": "^5.4.0",
     "object-diff": "0.0.4",
     "passport": "^0.4.0",
     "passport-jwt": "^4.0.0",
@@ -42,10 +40,10 @@
   },
   "devDependencies": {
     "concurrently": "^3.6.0",
-    "cors": "^2.8.4",
+    "cors": "^2.8.5",
     "ejs": "^2.6.1",
     "mocha": "^5.2.0",
-    "morgan": "^1.9.0",
-    "nodemon": "^1.18.3"
+    "morgan": "^1.9.1",
+    "nodemon": "^1.18.9"
   }
 }
