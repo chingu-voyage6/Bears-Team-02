@@ -18,7 +18,7 @@ const app = express();
 /* Mongoose connection to mLab */
 mongoose.Promise = global.Promise;
 mongoose
-  .connect(keys.mongoURI, { useNewUrlParser: true })
+  .connect(keys.mongoURI, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => console.log('Connected to mongoDB server'))
   .catch((err) => console.log('Error connecting to mongo server', err));
 
