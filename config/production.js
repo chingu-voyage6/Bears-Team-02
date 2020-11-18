@@ -1,4 +1,5 @@
 module.exports = {
   mLabURI: process.env.mLabURI,
-  cookieKey: process.env.cookieKey
+  mongoURI: process.env.mongoURI,
+  cookieKey: process.env.cookieKey,
 };
