@@ -26,24 +26,24 @@
   },
   "homepage": "https://github.com/chingu-voyage6/Bears-Team-02#readme",
   "dependencies": {
-    "body-parser": "^1.18.3",
-    "chalk": "^2.4.1",
-    "cookie-session": "^2.0.0-beta.3",
-    "express": "^4.16.4",
-    "jwt-simple": "^0.5.5",
-    "mongoose": "^5.4.0",
+    "body-parser": "^1.19.0",
+    "chalk": "^4.1.0",
+    "cookie-session": "^1.4.0",
+    "express": "^4.17.1",
+    "jwt-simple": "^0.5.6",
+    "mongoose": "^5.10.15",
     "object-diff": "0.0.4",
-    "passport": "^0.4.0",
+    "passport": "^0.4.1",
     "passport-jwt": "^4.0.0",
     "passport-local": "^1.0.0",
-    "passport-local-mongoose": "^5.0.1"
+    "passport-local-mongoose": "^6.0.1"
   },
   "devDependencies": {
-    "concurrently": "^3.6.0",
+    "concurrently": "^5.3.0",
     "cors": "^2.8.5",
-    "ejs": "^2.6.1",
-    "mocha": "^5.2.0",
-    "morgan": "^1.9.1",
-    "nodemon": "^1.18.9"
+    "ejs": "^2.7.4",
+    "mocha": "^8.2.1",
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.6"
   }
 }
