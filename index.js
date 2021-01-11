@@ -18,9 +18,14 @@ const app = express();
 /* Mongoose connection to mLab */
 mongoose.Promise = global.Promise;
 mongoose
-  .connect(keys.mongoURI, { useNewUrlParser: true, useUnifiedTopology: true })
+  .connect(keys.mongoURI, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useCreateIndex: true,
+    useFindAndModify: true,
+  })
   .then(() => console.log('Connected to mongoDB server'))
-  .catch((err) => console.log('Error connecting to mongo server', err));
+  .catch(err => console.log('Error connecting to mongo server', err));
 
 /* Express Middleware */
 // app.use(cors()); // Used for testing. Client is on another port to server.
